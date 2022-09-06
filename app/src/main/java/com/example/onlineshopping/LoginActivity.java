@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.onlineshopping.ui.home.HomeFragment;
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText mEmail,mPassword;
@@ -32,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                if(databaseHelper.checkUser(mEmail.getText().toString().trim(),mPassword.getText().toString().trim())){
                    Toast.makeText(LoginActivity.this, "home page", Toast.LENGTH_SHORT).show();
+                   Intent i = new Intent(getApplicationContext(), DesignActivity.class);
+                   startActivity(i);
                    mEmail.setText("");
                    mPassword.setText("");
                }

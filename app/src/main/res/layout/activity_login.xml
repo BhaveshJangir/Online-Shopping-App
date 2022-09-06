@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
+
     <LinearLayout
         android:id="@+id/intro_layout_login"
         android:layout_width="match_parent"
@@ -53,12 +54,12 @@
                 android:id="@+id/login_bt"
                 android:layout_width="200dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/corner"
+                android:backgroundTint="#000000"
                 android:text="Login"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/pre_register_page"
                 android:layout_width="wrap_content"
