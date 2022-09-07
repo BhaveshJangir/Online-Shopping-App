@@ -26,7 +26,7 @@ import com.example.onlineshopping.ui.home.HomeFragment;
 public class Account extends Fragment {
 
     private FragmentAccountBinding binding;
-    private AccountViewModel mViewModel;
+    //private AccountViewModel mViewModel;
 
     public static Account newInstance() {
         return new Account();
