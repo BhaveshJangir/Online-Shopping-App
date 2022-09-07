@@ -22,6 +22,13 @@
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/register_img"/>
 
     </LinearLayout>
     <androidx.cardview.widget.CardView
@@ -47,6 +54,7 @@
                 <EditText
                     android:id="@+id/password_login_et"
                     style="@style/editText"
+                    android:inputType="textPassword"
                     android:hint="Password" />
             </com.google.android.material.textfield.TextInputLayout>
 

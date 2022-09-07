@@ -1,12 +1,15 @@
 package com.example.onlineshopping.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.onlineshopping.Item;
 import com.example.onlineshopping.ItemAdapter;
+import com.example.onlineshopping.LoginActivity;
 import com.example.onlineshopping.R;
 import com.example.onlineshopping.databinding.FragmentHomeBinding;
 
@@ -25,11 +29,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        HomeViewModel homeViewModel =
-//                new ViewModelProvider(this).get(HomeViewModel.class);
-//
-//        binding = FragmentHomeBinding.inflate(inflater, container, false);
-//        View root = binding.getRoot();
+
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         ArrayList<Item> item  = new ArrayList<Item>();
@@ -49,12 +49,13 @@ public class HomeFragment extends Fragment {
         ItemAdapter itemAdapter = new ItemAdapter(getActivity(),item);
         ListView listView = (ListView) rootView.findViewById(R.id.home_listView);
         listView.setAdapter(itemAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+                Toast.makeText(getActivity().getApplicationContext(), "Added in Cart", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-
-
-
-//        final TextView textView = binding.textHome;
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return rootView;
     }
 

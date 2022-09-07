@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.onlineshopping.Item;
 import com.example.onlineshopping.ItemAdapter;
@@ -32,9 +34,16 @@ public class Cart extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_cart, container, false);
+        Button mCheckOut = (Button) root.findViewById(R.id.check_out);
+        mCheckOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity().getApplicationContext(), "Order Successfully Done", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        return inflater.inflate(R.layout.fragment_cart, container, false);
-
+        return root;
     }
 
     @Override
@@ -44,4 +53,7 @@ public class Cart extends Fragment {
         // TODO: Use the ViewModel
     }
 
+    public void check(View view) {
+        Toast.makeText(getActivity(), "Order Successfully done", Toast.LENGTH_SHORT).show();
+    }
 }

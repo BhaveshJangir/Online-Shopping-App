@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.onlineshopping.databinding.FragmentCartBinding;
 import com.example.onlineshopping.ui.home.HomeFragment;
 
 public class LoginActivity extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         mEmail = (EditText) findViewById(R.id.email_login_et);
         mPassword = (EditText) findViewById(R.id.password_login_et);
         mLogin = (Button) findViewById(R.id.login_bt);
-        mRegisterBack = (TextView) findViewById(R.id.email_login_et);
+        mRegisterBack = (TextView) findViewById(R.id.pre_register_page);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         mLogin.setOnClickListener(new View.OnClickListener() {
@@ -35,15 +36,27 @@ public class LoginActivity extends AppCompatActivity {
                if(databaseHelper.checkUser(mEmail.getText().toString().trim(),mPassword.getText().toString().trim())){
                    Toast.makeText(LoginActivity.this, "home page", Toast.LENGTH_SHORT).show();
                    Intent i = new Intent(getApplicationContext(), DesignActivity.class);
+                   i.putExtra("Email",mEmail.getText().toString());
+                   i.putExtra("password",mPassword.getText().toString());
                    startActivity(i);
+                   finish();
                    mEmail.setText("");
                    mPassword.setText("");
                }
                else{
                    Toast.makeText(LoginActivity.this, "incorrect", Toast.LENGTH_SHORT).show();
-                   mEmail.setText("");
                    mPassword.setText("");
                }
+            }
+
+        });
+
+        mRegisterBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), FragmentCartBinding.class);
+                startActivity(i);
+                finish();
             }
         });
     }

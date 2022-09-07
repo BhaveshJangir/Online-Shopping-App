@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.cart.Cart">
+    android:id="@+id/cart_fragment"
+    tools:context=".ui.cart.Cart"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="10dp">
 
-   <ListView
-       android:id="@+id/cart_listView"
+   <ImageView
+       android:id="@+id/item_image"
+       android:src="@drawable/bottle_item"
+       android:scaleType="centerCrop"
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
-   </ListView>
+       android:layout_height="200dp"
+       android:layout_marginTop="10dp"
+       />
+
+   <TextView
+       android:id="@+id/item_brand"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/item_image"
+       android:text="Good"
+
+       android:textSize="25dp"/>
+   <TextView
+       android:id="@+id/item_name"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/item_brand"
+       android:text="Sport Bottle ed4"
+       android:textSize="15dp"/>
+   <TextView
+       android:id="@+id/item_price"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:layout_below="@+id/item_image"
+       android:text="Rs. 700"
+       android:textStyle="bold"
+       android:layout_marginRight="10dp"
+       android:textSize="15dp"/>
+
+   <Button
+       android:id="@+id/check_out"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:background="@drawable/corner"
+       android:layout_marginBottom="30dp"
+       android:text="check out" />
 
 
-</LinearLayout>
+
+</RelativeLayout>
