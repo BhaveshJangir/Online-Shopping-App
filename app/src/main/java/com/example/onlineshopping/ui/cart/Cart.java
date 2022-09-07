@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class Cart extends Fragment {
 
-    private CartViewModel mViewModel;
+    //private CartViewModel mViewModel;
 
     public static Cart newInstance() {
         return new Cart();
@@ -46,14 +46,4 @@ public class Cart extends Fragment {
         return root;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(CartViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
-    public void check(View view) {
-        Toast.makeText(getActivity(), "Order Successfully done", Toast.LENGTH_SHORT).show();
-    }
 }
